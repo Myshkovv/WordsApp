@@ -15,6 +15,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginHorizontal="24dp"
         android:background="@android:color/transparent"
+        android:contentDescription="close image button"
         android:src="@drawable/ic_close"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,12 +27,14 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="86dp"
         android:layout_marginHorizontal="32dp"
+        android:fontFamily="@font/nunito_bold"
         android:text="Galaxy"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton"
-        tools:text="Galaxy" />
+        tools:text="Galaxy"
+        tools:ignore="HardcodedText" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -64,8 +67,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/rubik_reguliar"
                 android:layout_marginStart="8dp"
-                android:text="Cломать" />
+                android:text="Cломать"
+                tools:ignore="HardcodedText" />
 
         </LinearLayout>
 
@@ -91,7 +96,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Сон" />
+                android:fontFamily="@font/rubik_reguliar"
+                android:text="Сон"
+                tools:ignore="HardcodedText" />
 
         </LinearLayout>
 
@@ -117,7 +124,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Галактика" />
+                android:fontFamily="@font/rubik_reguliar"
+                android:text="Галактика"
+                tools:ignore="HardcodedText" />
 
         </LinearLayout>
 
@@ -143,7 +152,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="Утюг" />
+                android:fontFamily="@font/rubik_reguliar"
+                android:text="Утюг"
+                tools:ignore="HardcodedText" />
 
         </LinearLayout>
 
@@ -161,6 +172,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#0EAD69"
@@ -175,6 +187,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="36dp"
             android:layout_marginTop="18dp"
+            android:contentDescription="corret image icon"
             android:src="@drawable/group_410__1_"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -182,17 +195,19 @@
         <android.widget.Button
             android:layout_width="310dp"
             android:layout_height="58dp"
-            android:layout_marginBottom="12dp"
-            android:text="Continue"
-            android:textAllCaps="true"
-            android:backgroundTint="@color/white"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/shape_button_footer"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/button_continue"
+            android:textAllCaps="true"
             android:textColor="#0EAD69"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+             />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
