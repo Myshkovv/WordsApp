@@ -48,23 +48,26 @@
         app:layout_constraintTop_toBottomOf="@+id/tvQuestionWord">
 
         <LinearLayout
+            android:id="@+id/layoutAnswer1"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:background="@drawable/shape_rounder_conteiners"
+            android:background="@drawable/shape_rounded_conteiners"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tvVariantNumber1"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="12dp"
-                android:background="@drawable/shape_rounder_variants"
+                android:background="@drawable/shape_rounded_variants"
                 android:gravity="center"
                 android:text="1"
                 android:textColor="#888992"
                 android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/tvVariantValue1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/TextViewVariantStyle"
@@ -78,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_marginTop="17dp"
-            android:background="@drawable/shape_rounder_conteiners"
+            android:background="@drawable/shape_rounded_conteiners"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -86,7 +89,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="12dp"
-                android:background="@drawable/shape_rounder_variants"
+                android:background="@drawable/shape_rounded_variants"
                 android:gravity="center"
                 android:text="2"
                 android:textColor="#888992"
@@ -103,24 +106,27 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layoutAnswer3"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_marginTop="17dp"
-            android:background="@drawable/shape_rounder_conteiners"
+            android:background="@drawable/shape_rounded_conteiners"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tvVariantNumber3"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="12dp"
-                android:background="@drawable/shape_rounder_variants"
+                android:background="@drawable/shape_rounded_variants"
                 android:gravity="center"
                 android:text="3"
                 android:textColor="#888992"
                 android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/tvVariantValue3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -134,7 +140,7 @@
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_marginTop="17dp"
-            android:background="@drawable/shape_rounder_conteiners"
+            android:background="@drawable/shape_rounded_conteiners"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -142,7 +148,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="12dp"
-                android:background="@drawable/shape_rounder_variants"
+                android:background="@drawable/shape_rounded_variants"
                 android:gravity="center"
                 android:text="4"
                 android:textColor="#888992"
@@ -161,38 +167,43 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btnSkip"
         android:layout_width="310dp"
         android:layout_height="58dp"
         android:backgroundTint="#2574FF"
         android:text="Skip"
         android:textAllCaps="true"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/layoutResult"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:background="#0EAD69"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_height="100dp">
+        tools:layout_height="100dp"
+        tools:visibility="gone">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/ivResultIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="36dp"
             android:layout_marginTop="18dp"
             android:contentDescription="corret image icon"
-            android:src="@drawable/group_410__1_"
+            android:src="@drawable/ic_correct"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <android.widget.Button
+            android:id="@+id/btnContinue"
             android:layout_width="310dp"
             android:layout_height="58dp"
             android:layout_marginTop="12dp"
@@ -206,7 +217,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/ivResultIcon"
              />
 
 
