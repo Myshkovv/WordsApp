@@ -1,11 +1,13 @@
 package com.example.wordsapp
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.wordsapp.FirstDemoActivity.*
 import com.example.wordsapp.databinding.ActivityFirstDemoBinding
 import com.example.wordsapp.databinding.ActivitySecondDemoBinding
 
@@ -26,9 +28,18 @@ class SecondDemoActivity : AppCompatActivity() {
 
             val text = intent.getStringExtra("EXTRA_KEY_TEXT")
             val number = intent.getIntExtra("EXTRA_KEY_NUMBER", 0)
+            val word : ExtraWord = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                intent.getSerializableExtra("EXTRA_KEY_WORD", ExtraWord::class.java) as ExtraWord
+            } else {
+                intent.getSerializableExtra("EXTRA_KEY_WORD") as ExtraWord
+            }
+
+//            val word2 = intent.extras?.getSerializable("EXTRA_KEY_WORD", ExtraWord::class.java)
+
 
             tvText.text = text
             tvNumber.text = number.toString()
+            tvWord.text = word.original
 
         }
     }
