@@ -3,6 +3,7 @@ package com.example.wordsapp
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,6 +17,13 @@ class SecondDemoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        Log.i("!!!", "${this.componentName.shortClassName} Выполняется метод onCreate")
+
+
+
+
+
 
         binding = ActivitySecondDemoBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -56,5 +64,38 @@ class SecondDemoActivity : AppCompatActivity() {
             tvWord.text = word?.original
 
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        Log.i("!!!", "${this.componentName.shortClassName} Выполняется метод onStart")
+
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        Log.i("!!!", "${this.componentName.shortClassName} Выполняется метод onResume")
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("!!!", "${this.componentName.shortClassName} Выполняется метод onPause")
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("!!!", "${this.componentName.shortClassName} Выполняется метод onStop")
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("!!!", "${this.componentName.shortClassName} Выполняется метод onDestroy")
+
     }
 }

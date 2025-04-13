@@ -17,6 +17,7 @@ class FirstDemoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
 
         binding = ActivityFirstDemoBinding.inflate(layoutInflater)
         setContentView(binding.root)

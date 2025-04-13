@@ -28,6 +28,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+    <Button
+        android:id="@+id/btnRequestPermission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOpenFirst" />
+
     <TextView
         android:id="@+id/tvText"
         android:layout_width="wrap_content"
@@ -37,7 +47,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnOpenFirst" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRequestPermission" />
     <TextView
         android:id="@+id/tvNumber"
         android:layout_width="wrap_content"
