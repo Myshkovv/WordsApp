@@ -26,8 +26,8 @@ class SecondDemoActivity : AppCompatActivity() {
                 startActivity(intenet)
             }
 
-            val text = intent.getStringExtra("EXTRA_KEY_TEXT")
-            val number = intent.getIntExtra("EXTRA_KEY_NUMBER", 0)
+//            val text = intent.getStringExtra("EXTRA_KEY_TEXT")
+//            val number = intent.getIntExtra("EXTRA_KEY_NUMBER", 0)
 //            val word : ExtraWord = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
 //                intent.getSerializableExtra("EXTRA_KEY_WORD", ExtraWord::class.java) as ExtraWord
 //            } else {
@@ -36,10 +36,19 @@ class SecondDemoActivity : AppCompatActivity() {
 
 //            val word2 = intent.extras?.getSerializable("EXTRA_KEY_WORD", ExtraWord::class.java)
 
+//            val word = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+//                intent.getParcelableExtra("EXTRA_KEY_WORD", ExtraWord::class.java)
+//            } else {
+//                intent.getParcelableExtra("EXTRA_KEY_WORD")
+//            }
+
+            val bundle = intent.extras
+            val text = bundle?.getString("EXTRA_KEY_TEXT")
+            val number = bundle?.getInt("EXTRA_KEY_NUMBER")
             val word = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                intent.getParcelableExtra("EXTRA_KEY_WORD", ExtraWord::class.java)
+                bundle?.getParcelable("EXTRA_KEY_WORD", ExtraWord::class.java)
             } else {
-                intent.getParcelableExtra("EXTRA_KEY_WORD")
+                bundle?.getParcelable("EXTRA_KEY_WORD")
             }
 
             tvText.text = text

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import androidx.versionedparcelable.VersionedParcelize
 import com.example.wordsapp.databinding.ActivityFirstDemoBinding
 import kotlinx.parcelize.Parcelize
@@ -26,10 +27,26 @@ class FirstDemoActivity : AppCompatActivity() {
         )
 
         binding.btnOpenSecond.setOnClickListener {
-            val intent = Intent(this@FirstDemoActivity, SecondDemoActivity::class.java)
-            intent.putExtra("EXTRA_KEY_TEXT", "dont panic")
-            intent.putExtra("EXTRA_KEY_NUMBER", 42)
-            intent.putExtra("EXTRA_KEY_WORD", word)
+            val intent = Intent(this@FirstDemoActivity, SecondDemoActivity::class.java).apply {
+                putExtra("EXTRA_KEY_TEXT", "dont panic")
+                putExtra("EXTRA_KEY_NUMBER", 42)
+                putExtra("EXTRA_KEY_WORD", word)
+            }
+
+
+            val bundle = Bundle()
+//            bundle.putString("EXTRA_KEY_TEXT", "dont panic")
+//            bundle.putInt("EXTRA_KEY_NUMBER", 42)
+//            bundle.putParcelable("EXTRA_KEY_WORD", word)
+            intent.putExtras(
+                bundleOf(
+                    "EXTRA_KEY_TEXT" to "dont panic",
+                    "EXTRA_KEY_NUMBER" to 42,
+                    "EXTRA_KEY_WORD" to word,
+
+                )
+            )
+
             startActivity(intent)
         }
     }
